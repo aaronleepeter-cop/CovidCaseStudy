@@ -13,21 +13,21 @@ Using publicly available COVID-19 data, this project answers questions like:
 * What do the global case and death totals look like?
 
 Data Source
-CovidDeaths.csv — daily case and death counts by country
-CovidVaccinations.csv — daily vaccination and testing data by country
+CovidDeaths.csv - daily case and death counts by country
+CovidVaccinations.csv - daily vaccination and testing data by country
 
 Both datasets are joined on location and date.
 
 Skills Used
 Joins — combining the deaths and vaccinations tables
-CTEs (Common Table Expressions) — structuring multi-step calculations
-Temp Tables — staging intermediate results
-Window Functions — calculating rolling vaccination totals per country
-Aggregate Functions — SUM, MAX, COUNT for summary statistics
-Data Type Conversion — casting text/numeric columns for calculations
-Views — saving reusable queries for downstream visualization
+CTEs (Common Table Expressions) - structuring multi-step calculations
+Temp Tables - staging intermediate results
+Window Functions - calculating rolling vaccination totals per country
+Aggregate Functions - SUM, MAX, COUNT for summary statistics
+Data Type Conversion - casting text/numeric columns for calculations
+Views - saving reusable queries for downstream visualization
 
 Tools Used
-PostgreSQL — database engine
-pgAdmin — GUI for writing and running queries
-Excel — initial review and light cleaning of the raw CSV files (checking headers, spotting blanks/inconsistencies, verifying formats) before importing into PostgreSQL.
+PostgreSQL - database engine
+pgAdmin - GUI for writing and running queries
+Excel - initial review and light cleaning of the raw CSV files (checking headers, spotting blanks/inconsistencies, verifying formats) before importing into PostgreSQL.
