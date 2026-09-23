@@ -24,7 +24,7 @@ ORDER BY 1, 2;
 SELECT location, date, total_cases, total_deaths,
        (total_deaths / total_cases) * 100 AS death_percentage
 FROM "CovidDeaths"
-WHERE location LIKE '%states%'
+WHERE location LIKE '%india%'
   AND continent IS NOT NULL
 ORDER BY 1, 2;
 
@@ -35,7 +35,7 @@ ORDER BY 1, 2;
 SELECT location, date, population, total_cases,
        (total_cases / population) * 100 AS percent_population_infected
 FROM "CovidDeaths"
---WHERE location LIKE '%states%'
+--WHERE location LIKE '%india%'
 ORDER BY 1, 2;
 
 
@@ -45,7 +45,7 @@ SELECT location, population,
        MAX(total_cases) AS highest_infection_count,
        MAX(total_cases / population) * 100 AS percent_population_infected
 FROM "CovidDeaths"
---WHERE location LIKE '%states%'
+--WHERE location LIKE '%india%'
 GROUP BY location, population
 ORDER BY percent_population_infected DESC;
 
@@ -54,7 +54,7 @@ ORDER BY percent_population_infected DESC;
 
 SELECT location, MAX(total_deaths::INTEGER) AS total_death_count
 FROM "CovidDeaths"
---WHERE location LIKE '%states%'
+--WHERE location LIKE '%india%'
 WHERE continent IS NOT NULL
 GROUP BY location
 ORDER BY total_death_count DESC;
@@ -66,7 +66,7 @@ ORDER BY total_death_count DESC;
 
 SELECT continent, MAX(total_deaths::INTEGER) AS total_death_count
 FROM "CovidDeaths"
---WHERE location LIKE '%states%'
+--WHERE location LIKE '%india%'
 WHERE continent IS NOT NULL
 GROUP BY continent
 ORDER BY total_death_count DESC;
@@ -78,7 +78,7 @@ SELECT SUM(new_cases) AS total_cases,
        SUM(new_deaths::INTEGER) AS total_deaths,
        SUM(new_deaths::INTEGER) / SUM(new_cases) * 100 AS death_percentage
 FROM "CovidDeaths"
---WHERE location LIKE '%states%'
+--WHERE location LIKE '%india%'
 WHERE continent IS NOT NULL
 --GROUP BY date
 ORDER BY 1, 2;
